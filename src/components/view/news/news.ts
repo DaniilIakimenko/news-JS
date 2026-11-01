@@ -1,5 +1,6 @@
 import type { Article } from '../../../types';
 import './news.css';
+import { requireElement } from '../../../utils/dom';
 
 class News {
     draw(data: Article[]): void {
@@ -45,14 +46,6 @@ class News {
         newsContainer.innerHTML = '';
         newsContainer.appendChild(fragment);
     }
-}
-
-function requireElement<T extends Element>(root: ParentNode, selector: string): T {
-    const el = root.querySelector(selector);
-    if (!el) {
-        throw new Error(`Element not found: ${selector}`);
-    }
-    return el as T;
 }
 
 export default News;
