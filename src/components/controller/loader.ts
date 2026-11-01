@@ -1,5 +1,5 @@
 type LoaderOptions = {
-    apiKey?: string;
+    apiKey?: string | undefined;
     [key: string]: string | undefined;
 };
 
